@@ -20,6 +20,7 @@ jobs:
 
       - name: Run Tests
         run: go test ./... -cover
+<<<<<<< HEAD
 
   Style:
     name: Style
@@ -36,3 +37,5 @@ jobs:
         
       - name: Correct style formatting and actually work plz
         run: test -z $(go fmt ./...)
+=======
+>>>>>>> 5674686 (unupdate git for ci.yml)
