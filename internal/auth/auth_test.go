@@ -48,4 +48,5 @@ func TestGetAPIKey(t *testing.T) {
 			t.Errorf("False pass JSON written incorrectly  | key: %v", key3)
 		}
 	*/
+	t.Fatal("DIE!!!")
 }
