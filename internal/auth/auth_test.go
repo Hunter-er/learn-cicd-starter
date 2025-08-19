@@ -49,4 +49,5 @@ func TestGetAPIKey(t *testing.T) {
 		}
 	*/
 	t.Errorf("test fail for ci.yml workflow")
+	t.Fatalf("This always fails!")
 }
