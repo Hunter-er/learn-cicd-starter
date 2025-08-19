@@ -22,11 +22,12 @@ jobs:
         run: go test ./... -cover
 
   Style:
+    name: Style - style
     name: Format Go code
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
+      - name: Check out code and shit
         uses: actions/checkout@v4
 
       - name: Set up Go

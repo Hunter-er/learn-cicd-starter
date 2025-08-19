@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+// adding comments to force a real update since bdd sucks sometimes
+
 // func GetAPIKey(headers http.Header) (string, error)
 func TestGetAPIKey(t *testing.T) {
 
@@ -46,4 +48,11 @@ func TestGetAPIKey(t *testing.T) {
 			t.Errorf("False pass JSON written incorrectly  | key: %v", key3)
 		}
 	*/
+}
+
+func Dumb() {
+	//stop being bullship
+	//thats all I ask
+	//I need nothing else
+
 }
