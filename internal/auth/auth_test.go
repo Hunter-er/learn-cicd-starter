@@ -49,3 +49,10 @@ func TestGetAPIKey(t *testing.T) {
 		}
 	*/
 }
+
+func Dumb() {
+	//stop being bullship
+	//thats all I ask
+	//I need nothing else
+
+}
