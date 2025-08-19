@@ -9,8 +9,6 @@ import (
 // func GetAPIKey(headers http.Header) (string, error)
 func TestGetAPIKey(t *testing.T) {
 
-	new v arira;l
-
 	goodHeader := http.Header{}
 	badApiHeader := http.Header{}
 	badValHeader := http.Header{}
@@ -48,6 +46,5 @@ func TestGetAPIKey(t *testing.T) {
 			t.Errorf("False pass JSON written incorrectly  | key: %v", key3)
 		}
 	*/
-	t.Errorf("test fail for ci.yml workflow")
 	t.Fatalf("This always fails!")
 }
