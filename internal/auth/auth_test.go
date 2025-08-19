@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+// adding comments to force a real update since bdd sucks sometimes
+
 // func GetAPIKey(headers http.Header) (string, error)
 func TestGetAPIKey(t *testing.T) {
 
