@@ -23,7 +23,6 @@ jobs:
 
   Style:
     name: Style - style
-    name: Format Go code
     runs-on: ubuntu-latest
 
     steps:
