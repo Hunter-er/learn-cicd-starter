@@ -5,28 +5,15 @@ on:
     branches: [main]
 
 jobs:
-  ADeploy:
-    name: ADeploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: "1.23.0"
-
-      - name: gcloud builds submit
-        run: scripts/buildprod.sh
-
   Deploy:
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
       contents: 'read'
       id-token: 'write'
+
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
 
@@ -39,7 +26,7 @@ jobs:
           go-version: "1.23.0"
 
       - name: Build Script
-        run: scripts/buildprod.sh   # Build 'notely' binary HERE
+        run: scripts/buildprod.sh
 
       - id: 'auth'
         uses: 'google-github-actions/auth@v2'
@@ -57,7 +44,11 @@ jobs:
       - name: gcloud builds submit
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-469522/notely-ar-repo/notely:v1 .
 
+      - name: Install goose
+        run: go install github.com/pressly/goose/v3/cmd/goose@latest
+
+      - name: Migrate Up Script
+        run: scripts/migrateup.sh
+
       - name: Deploy to Cloud Run
         run: gcloud run deploy notely --image us-central1-docker.pkg.dev/notely-469522/notely-ar-repo/notely:v1 --region us-central1 --allow-unauthenticated --project notely-469522 --max-instances=4
-
-        
